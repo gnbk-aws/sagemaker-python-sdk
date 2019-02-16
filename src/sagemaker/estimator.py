@@ -872,7 +872,8 @@ class Framework(EstimatorBase):
                                   s3_key_prefix=code_s3_prefix,
                                   script=self.entry_point,
                                   directory=self.source_dir,
-                                  dependencies=self.dependencies)
+                                  dependencies=self.dependencies,
+				  output_kms_key=self.output_kms_key)
 
     def _model_source_dir(self):
         """Get the appropriate value to pass as source_dir to model constructor on deploying
