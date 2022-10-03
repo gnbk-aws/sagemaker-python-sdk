@@ -100,7 +100,7 @@ def extract_files(output_path, tmpdir):
                 if not is_within_directory(path, member_path):
                     raise Exception("Attempted Path Traversal in Tar File")
         
-            tar.extractall(path, members, numeric_owner) 
+            tar.extractall(path, members, numeric_owner=numeric_owner) 
             
         
         safe_extract(tar, tmpdir)
@@ -135,7 +135,7 @@ def extract_files_from_s3(s3_url, tmpdir):
                 if not is_within_directory(path, member_path):
                     raise Exception("Attempted Path Traversal in Tar File")
         
-            tar.extractall(path, members, numeric_owner) 
+            tar.extractall(path, members, numeric_owner=numeric_owner) 
             
         
         safe_extract(tar_file, tmpdir)
